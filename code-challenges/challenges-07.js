@@ -142,7 +142,46 @@ const cvFormatter = (arr) => {
 //  1- rejectedApplicants are applications that has both the names empty or null and whoever have one year or less of Experience
 
 const applicationsStatics = (arr) => {
-    // write your code here
+
+    let pythonDevs = 0;
+    let jsDevs = 0;
+    let dotNetDevs = 0;
+    let javaDevs = 0;
+    let totalApps = 0;
+    let rejectedApps = 0;
+
+    for(let i = 0; i < arr.length; i++){
+
+        if(arr[i].tech == "Python"){
+            pythonDevs++;
+        }
+        else if(arr[i].tech == "JS"){
+            jsDevs++;
+        }
+        else if(arr[i].tech == ".Net"){
+            dotNetDevs++;
+        }
+        else if(arr[i].tech == "Java"){
+            javaDevs++;
+        }
+
+        if(arr[i].yearsOfExperience <= 1){
+            rejectedApps++;
+        }
+
+        totalApps++;
+    }
+
+    let result = {
+        python_Devs: pythonDevs,
+        javaScript_Devs: jsDevs,
+        dotNet_Devs: dotNetDevs,
+        java_Devs: javaDevs,
+        totalApplicants: totalApps,
+        rejectedApplicants: rejectedApps
+    };
+
+    return result;
 };
 // -------------------------------------------------------------------------------------------------------
 
@@ -160,10 +199,10 @@ let data = {
     SchoolName: "David Academy",
     Capacity: 1000,
     grades: [
-        {
+        { ///////////// i 
             grade: "First",
             numberOFClasses: 3,
-            classes: [
+            classes: [  ////////////////// j
                 {
                     avg: 0,
                     classNumber: "01",
@@ -269,7 +308,31 @@ let data = {
 //  2- You need to round the average to the nearest lower number 
 
 const classesAvg = (data) => {
-    // write your code here
+    let grades = data.grades; 
+
+  // loop into grades
+  for(let i = 0; i < grades.length; i++){
+
+    let classes = grades[i].classes;
+
+    // loop into classes
+    for(let j = 0; j < classes.length; j++){
+
+      let classScores = classes[j].classScores;
+      let sum = 0;
+
+      // loop into classScore to get the summation
+      for(let k = 0; k < classScores.length; k++){
+        sum = sum + classScores[k];
+      }
+
+      // update the avarage of the class
+      classes[j].avg = Math.floor ( sum / classScores.length );
+
+    }
+  }
+  
+  return data;
 };
 // -------------------------------------------------------------------------------------------------------
 

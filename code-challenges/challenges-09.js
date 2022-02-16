@@ -20,7 +20,7 @@
 
 const arrInc = (arr) => {
     let result = [];
-  
+    //
     arr.forEach(e => {
         result.push(e + 10);
     });

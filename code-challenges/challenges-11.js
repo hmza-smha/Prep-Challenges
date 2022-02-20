@@ -122,6 +122,7 @@ function fullName(arr) {
 // -------------
 
 function gradesAvg(arr) {
+    
     return arr.map(x => ({firstName: x.firstName, lastName: x.lastName, gradsList:x.gradsList, avg: (x.gradsList.reduce((a, b) => a + b, 0) / x.gradsList.length) }));
 }
 // -------------------------------------------------------------------------------------------------------

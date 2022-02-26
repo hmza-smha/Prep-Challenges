@@ -24,8 +24,9 @@
 //
 
 const LastWord = (str) => {
+
     var n = str.lastIndexOf(" ");
-	var res = str.substring(n + 1);
+	var res = str.slice(n + 1, str.length);
 	return res;
 }
 // -------------------------------------------------------------------------------------------------------
@@ -65,24 +66,24 @@ const LastWord_2 = (str) => {
  
 
 const replaceWords = (str) => {
+
     let arr = str.split(" ");
-    let result = "";
-    for(let i = 0; i < arr.length; i++){
-        if(arr[i] == "I"){
-            arr[i] = "We";
-        }
-        else if(arr[i] == "am"){
-            arr[i] = "are";
-        }
-        else if(arr[i] == "was"){
-            arr[i] = "were";
-        }
-        
-        result = result + arr[i] + " ";
+
+    while(arr.indexOf("I") != -1){
+        arr[arr.indexOf("I")] = "We";
     }
-    
-    return result.slice(0, -1);
+
+    while(arr.indexOf("am") != -1){
+        arr[arr.indexOf("am")] = "are";
+    }
+
+    while(arr.indexOf("was") != -1){
+        arr[arr.indexOf("was")] = "were";
+    }
+
+    return arr.join(" ");
 }
+
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------

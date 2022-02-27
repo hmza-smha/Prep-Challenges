@@ -45,7 +45,7 @@
         {
             "language": "javascript",
             "source": [
-                ""
+                "function howManyGames(p, d, m, s) {\n\n    let myMoney = s;\n    let numOfGames = 0;\n    let price = p;\n\n    while(myMoney >= 0){\n\n        myMoney -= price;\n\n        if(price - d > m){\n            price -= d;\n        }\n        else{\n            price = m;\n        }\n\n        numOfGames++;\n\n    }\n\n    return numOfGames - 1;\n\n}"
             ],
             "outputs": []
         },
@@ -59,7 +59,7 @@
         {
             "language": "javascript",
             "source": [
-                ""
+                "// works fine but slow\nfunction squares(a, b) {\n    \n    let numOfSquares = 0;\n\n    for(let i = a; i <= b; i++){\n        if(isSquare(i))\n            numOfSquares++;\n    }\n    return numOfSquares;\n}\n\nfunction isSquare(n){\n\n    let square = Math.sqrt(n);\n\n    let checkInt = square - Math.floor(square);\n\n    return checkInt == 0;\n}"
             ],
             "outputs": []
         }

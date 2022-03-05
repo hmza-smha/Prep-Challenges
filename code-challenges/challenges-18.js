@@ -15,7 +15,17 @@
 //
 
 const wordLength = (str) => {
-    // write your code here
+    let arr = str.split(" ");
+    let middleWord;
+
+    if(arr.length % 2 == 0){
+        middleWord = arr[arr.length / 2];
+    }
+    else{
+        middleWord = arr[Math.floor(arr.length / 2)];
+    }
+
+    return middleWord.length;
 }
 // -------------------------------------------------------------------------------------------------------
 
@@ -40,7 +50,7 @@ const wordLength = (str) => {
 // Output: false
 
 const wordLetters = (str1, str2) => {
-    // write your code here
+    
 }
 // -------------------------------------------------------------------------------------------------------
 

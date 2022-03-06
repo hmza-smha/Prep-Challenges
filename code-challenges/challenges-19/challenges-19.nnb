@@ -24,7 +24,7 @@
         {
             "language": "javascript",
             "source": [
-                ""
+                "function appendAndDelete(s, t, k) {\n    if (s.length + t.length <= k) {\n            return \"Yes\";\n        }\n        \n        let i = 0;\n        for (   ; i < s.length && i < t.length; i++) {\n            if (s.charAt(i) != t.charAt(i)) {\n                break;\n            }\n        }\n        let minOperations = (s.length - i) + (t.length - i);\n        return (k >= minOperations && (k - minOperations) % 2 == 0) ? \"Yes\" : \"No\";\n\n}"
             ],
             "outputs": []
         },
